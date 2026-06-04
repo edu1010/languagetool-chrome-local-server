@@ -32,9 +32,3 @@ Notas:
 - Esto usa el servidor open source local de LanguageTool. No incluye funciones premium/AI/parafraseo de pago.
 - El repositorio publico de la extension de navegador esta marcado por LanguageTool como version antigua.
 - La carpeta `webextension-mv3` es una adaptacion local para Chrome Manifest V3.
-
-## Antes de subir a GitHub
-
-No subas `chrome-profile-languagetool/`, `server/LanguageTool-*`, ZIPs, logs ni PID. Son archivos generados o binarios descargados.
-
-La extension clonada desde `languagetool-browser-addon` contiene un repositorio Git interno, por eso queda ignorada. Para este repo se sube solo `extension\webextension-mv3`, que es la copia publicable de la adaptacion local.
