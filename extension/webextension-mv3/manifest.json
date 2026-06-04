@@ -1,0 +1,93 @@
+{
+  "manifest_version": 3,
+  "name": "LanguageTool Local",
+  "short_name": "LanguageTool",
+  "version": "1.0.48.3",
+  "version_name": "1.0.48 local MV3",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "64": "images/icon64.png",
+    "128": "images/icon128.png"
+  },
+  "author": "Daniel Naber",
+  "homepage_url": "https://languagetool.org",
+  "offline_enabled": true,
+  "action": {
+    "default_icon": "images/icon48.png",
+    "default_popup": "popup.html",
+    "default_title": "__MSG_tooltip__"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "http://localhost:8081/*",
+    "http://127.0.0.1:8081/*"
+  ],
+  "background": {
+    "service_worker": "bs/background-mv3.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*",
+        "vendors/*",
+        "vendors/featherlight/*",
+        "share/*",
+        "popup.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
+      "js": [
+        "vendors/jquery.min.js",
+        "vendors/purify.js",
+        "vendors/ally.js",
+        "vendors/most.js",
+        "vendors/featherlight/featherlight.js",
+        "share/helpers.js",
+        "share/tools.js",
+        "share/markup.js",
+        "cs/contentscript.js",
+        "cs/textarea.js"
+      ],
+      "css": [
+        "vendors/featherlight/featherlight.css",
+        "css/lt-marker-style.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://languagetool.org/*",
+        "https://www.languagetool.org/*"
+      ],
+      "js": [
+        "cs/contentscript-lt.js"
+      ]
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Space"
+      }
+    }
+  },
+  "options_ui": {
+    "page": "options.html"
+  }
+}
