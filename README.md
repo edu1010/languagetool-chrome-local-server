@@ -17,6 +17,9 @@ Uso:
 2. Arrancar servidor:
    `powershell -ExecutionPolicy Bypass -File .\start-server.ps1`
 
+   Alternativa desde CMD:
+   `start-server.cmd`
+
 3. Probar servidor:
    `powershell -ExecutionPolicy Bypass -File .\test-server.ps1`
 
